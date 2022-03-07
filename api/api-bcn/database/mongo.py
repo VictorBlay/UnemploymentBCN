@@ -6,8 +6,8 @@ load_dotenv()
 
 username = os.getenv("MONGO_USER")
 password = os.getenv("MONGO_PASS")
-url = f"mongodb+srv://{username}:{password}@midprojectcore.ot3vw.mongodb.net/test"
+url = f"mongodb+srv://{username}:{password}@databcn.ot3vw.mongodb.net/test"
 
-db = MongoClient(url).get_database("midprojectcore")
+db = MongoClient(url).get_database("databcn")
 
 
