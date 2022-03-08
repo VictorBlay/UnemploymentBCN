@@ -6,7 +6,7 @@ from json import loads
 
 router = APIRouter()
 
-@router.get("/Genero/{Gender}")
+@router.get("/Poblacion/DataGender/{Gender}")
 async def genero(Gender):
-    res = list(db["poblacion"].find({"Gender":Gender}))[0]
+    res = list(db["poblacion"].find({"Gender":Gender}))
     return loads(json_util.dumps(res))
