@@ -1,8 +1,7 @@
 from fastapi import FastAPI
-from routers import persona, poblacion
+from routers import poblacion
 
 app = FastAPI()
-app.include_router(persona.router)
 app.include_router(poblacion.router)
 
 
