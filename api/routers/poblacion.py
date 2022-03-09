@@ -6,8 +6,14 @@ from json import loads
 
 router = APIRouter()
 
+@router.get("/Population/Neighborhood")
+async def barrios():
+    res = distinct("poblacion", "Neighborhood.Name")
+    return {"barrios":res}
+
+
 @router.get("/Population/DataGender/{year}/{gender}")
-async def genero(year:int, gender):
+async def edad_genero(year, gender):
     res = get_data("poblacion", {"Gender":gender, "Year":year}, {'Age':1,'Number':1,'_id':0})
     rangos_poblacion = {}
     for ran in res:
@@ -20,15 +26,12 @@ async def genero(year:int, gender):
 
 @router.get("/TotalPopulation/Year/{year}")
 async def poblacion_total(year):
-    res = get_data("poblacion", {"Year":int(year)}, {'Number':1,'_id':0})
+    res = get_data("poblacion", {"Year":year}, {'Number':1,'_id':0})
     total_pop = [tot["Number"] for tot in res]
     suma = sum(total_pop)
     return {"Population Year":suma}
 
 
-@router.get("/Population/Neighborhood")
-async def genero():
-    res = distinct("poblacion", "Neighborhood.Name")
-    return {"barrios":res}
+
 
 
