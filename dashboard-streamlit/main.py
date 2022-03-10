@@ -1,12 +1,11 @@
-from operator import ne
 import streamlit as st
-from data.get_data import anual_pop_gender, neighborhood
+from data.get_data import anual_pop_gender, neighborhood, anual_pop, unemploy_gender, unemploy_neigh, unemploy_demand, meses
 
 st.title("Population and Unemployment in Barcelona")
 st.text("Mid-Project Bootcamp CoreCodeSchool")
 
-nei = neighborhood
+nei = [n[0] for n in neighborhood()]
+print(nei)
+st.selectbox("Neighborhood Select", nei)
 
-ls = st.multiselect("Neighborhood Select", nei)
 
-[neighborhood(barrios) for barrios in ls]
