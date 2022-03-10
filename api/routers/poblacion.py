@@ -24,7 +24,7 @@ async def edad_genero(year, gender):
     return rangos_poblacion
    
 
-@router.get("/TotalPopulation/Year/{year}")
+@router.get("/Population/Year/{year}")
 async def poblacion_total(year):
     res = get_data("poblacion", {"Year":year}, {'Number':1,'_id':0})
     total_pop = [tot["Number"] for tot in res]
