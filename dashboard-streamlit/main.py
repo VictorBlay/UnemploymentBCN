@@ -4,7 +4,7 @@ from data.get_data import anual_pop_gender, neighborhood, anual_pop, unemploy_ge
 st.title("Population and Unemployment in Barcelona")
 st.text("Mid-Project Bootcamp CoreCodeSchool")
 
-nei = [n[0] for n in neighborhood()]
+
 print(nei)
 st.selectbox("Neighborhood Select", nei)
 

@@ -1,6 +1,6 @@
 import requests
 
-url ="http://127.0.0.1:8000"
+url ="https://api-test-bcn.herokuapp.com"
 
 
 def anual_pop_gender(year,gender):
@@ -16,10 +16,10 @@ def meses():
     return requests.get(url+"/Unemployment/Month").json()
 
 def unemploy_demand(year):
-    return requests.get(url+"/Unemployment/Demand/{year}").json()
+    return requests.get(url+f"/Unemployment/Demand/{year}").json()
 
 def unemploy_gender(year,month):
-    return requests.get(url+"/Unemployment/DataGender/{year}/{month}").json()
+    return requests.get(url+f"/Unemployment/DataGender/{year}/{month}").json()
 
 def unemploy_neigh(year,month):
-    return requests.get(url+"/Unemployment/Neighborhood/{year}/{month}").json()     
+    return requests.get(url+f"/Unemployment/Neighborhood/{year}/{month}").json()     
