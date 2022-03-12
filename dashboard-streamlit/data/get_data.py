@@ -15,6 +15,9 @@ def neighborhood():
 def meses():
     return requests.get(url+"/Unemployment/Month").json()
 
+def años():
+    return requests.get(url+"/Population/Year").json()
+
 def unemploy_demand(year):
     return requests.get(url+f"/Unemployment/Demand/{year}").json()
 
