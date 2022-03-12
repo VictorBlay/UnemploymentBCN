@@ -11,6 +11,11 @@ async def barrios():
     res = distinct("poblacion", "Neighborhood.Name")
     return {"barrios":res}
 
+@router.get("/Population/Year")
+async def años():
+    res = distinct("poblacion", "Year")
+    return {"año":res}
+
 
 @router.get("/Population/DataGender/{year}/{gender}")
 async def edad_genero(year, gender):
