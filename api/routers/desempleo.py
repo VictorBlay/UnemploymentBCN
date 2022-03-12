@@ -11,6 +11,11 @@ async def meses():
     res = distinct("desempleo", "Month")
     return {"meses":res}
 
+@router.get("/Unemployment/Year")
+async def years():
+    res = distinct("desempleo", "Year")
+    return {"años":res}
+
 @router.get("/Unemployment/Demand/{year}")
 async def occupation(year):
     res = get_data("desempleo", {"Year":year}, {'Demand_occupation':1,'Number':1,'_id':0})

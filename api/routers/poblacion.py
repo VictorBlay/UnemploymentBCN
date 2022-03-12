@@ -16,6 +16,10 @@ async def años():
     res = distinct("poblacion", "Year")
     return {"año":res}
 
+@router.get("/Population/Gender")
+async def años():
+    res = distinct("poblacion", "Gender")
+    return {"genero":res}
 
 @router.get("/Population/DataGender/{year}/{gender}")
 async def edad_genero(year, gender):
