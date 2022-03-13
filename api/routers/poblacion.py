@@ -6,11 +6,6 @@ from json import loads
 
 router = APIRouter()
 
-@router.get("/Population/Neighborhood")
-async def barrios():
-    res = distinct("poblacion", "Neighborhood.Name")
-    return {"barrios":res}
-
 @router.get("/Population/Year")
 async def años():
     res = distinct("poblacion", "Year")
@@ -20,6 +15,17 @@ async def años():
 async def años():
     res = distinct("poblacion", "Gender")
     return {"genero":res}
+
+@router.get("/Population/Neighborhood/{year}")
+async def poblacion_barrios(year):
+    bar = get_data("poblacion", {"Year":year}, {'Neighborhood.Name':1, 'Number':1, '_id':0})
+    poblacion_barrios = {}
+    for b in bar:
+        if b["Neighborhood.Name"] in poblacion_barrios.keys():
+            poblacion_barrios[b["Neighborhood.Name"]] += b["Number"]
+        else:
+            poblacion_barrios[b["Neighborhood.Name"]] = b["Number"]
+    return poblacion_barrios
 
 @router.get("/Population/DataGender/{year}/{gender}")
 async def edad_genero(year, gender):
@@ -32,13 +38,6 @@ async def edad_genero(year, gender):
             rangos_poblacion[ran["Age"]] = ran["Number"]
     return rangos_poblacion
    
-
-@router.get("/Population/Year/{year}")
-async def poblacion_total(year):
-    res = get_data("poblacion", {"Year":year}, {'Number':1,'_id':0})
-    total_pop = [tot["Number"] for tot in res]
-    suma = sum(total_pop)
-    return {"Population Year":suma}
 
 
 

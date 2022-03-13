@@ -16,9 +16,9 @@ async def years():
     res = distinct("desempleo", "Year")
     return {"años":res}
 
-@router.get("/Unemployment/Demand/{year}")
-async def occupation(year):
-    res = get_data("desempleo", {"Year":year}, {'Demand_occupation':1,'Number':1,'_id':0})
+@router.get("/Unemployment/Demand/{year}/{month}")
+async def occupation(year, month):
+    res = get_data("desempleo", {"Year":year, "Month":month}, {'Demand_occupation':1,'Number':1,'_id':0})
     demanda_ocup = {}
     for dem in res:
         if dem["Demand_occupation"] in demanda_ocup.keys():
