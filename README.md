@@ -16,38 +16,47 @@ Para finalizar, la creación de un dashboard de visualización de datos en Strea
 **[Api Proyecto Heroku](https://api-test-bcn.herokuapp.com/)**
 
 ### Endpoints
-Información acerca de la poblacion en Barcelona
+Información acerca de la poblacion en Barcelona.
 
-**- /Population/Year**
+- **/Population/Year**
 Devuelve los diferentes años dentro la bbdd.
 
-**- /Population/Gender**
+- **/Population/Gender**
 Devuelve los diferentes géneros dentro la bbdd.
 
-**- /Population/DataGender/{year}/{gender}**
+- **/Population/DataGender/{year}/{gender}**
 Devuelve la población por rango de edades en un año y género determinado.
 
-**- /Population/Neighborhood/{year}**
+- **/Population/Neighborhood/{year}**
 Devuelve la población total por barrios en un año determinado.
 
-**- /Unemployment/Year**
+Información acerca del desempleo en Barcelona.
+
+- **/Unemployment/Year**
 Devuelve los diferentes años dentro la bbdd.
 
-**- /Unemployment/Month**
+- **/Unemployment/Month**
 Devuelve los diferentes meses del año dentro la bbdd.
 
-**- /Unemployment/Demand/{year}/{month}**
+- **/Unemployment/Demand/{year}/{month}**
 Devuelve la población demandante y desempleado en un año y mes concreto.
 
-**- /Unemployment/DataGender/{year}/{month}**
+- **/Unemployment/DataGender/{year}/{month}**
 Devuelve la población desempleada por género en un año y mes determinado.
 
-**- /Unemployment/Neighborhood/{year}/{month}**
+- **/Unemployment/Neighborhood/{year}/{month}**
 Devuelve la población desempleada por barrios en un año y mes determinado.
+
 
 ## Dashboard Streamlit
 
+A falta de colgar el dashboard en Heroku, Streamlit nos muestra los datos, que consume de la API creada, en dos paginas con diferentes visualizaciones.
 
+- **Población Barcelona**
+https://raw.githubusercontent.com/VictorBlay/UnemploymentBCN-CoreCodeSchool/main/data/Images/Population.png
+
+- **Desemploeo Barcelona**
+https://raw.githubusercontent.com/VictorBlay/UnemploymentBCN-CoreCodeSchool/main/data/Images/Unemployment.png
 
 
 ## Autor
