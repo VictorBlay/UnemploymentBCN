@@ -52,11 +52,9 @@ Devuelve la población desempleada por barrios en un año y mes determinado.
 
 A falta de colgar el dashboard en Heroku, Streamlit nos muestra los datos, que consume de la API creada, en dos paginas con diferentes visualizaciones.
 
-- **Población Barcelona**
-https://raw.githubusercontent.com/VictorBlay/UnemploymentBCN-CoreCodeSchool/main/data/Images/Population.png
+- **[Población Barcelona](https://raw.githubusercontent.com/VictorBlay/UnemploymentBCN-CoreCodeSchool/main/data/Images/Population.png)**
 
-- **Desemploeo Barcelona**
-https://raw.githubusercontent.com/VictorBlay/UnemploymentBCN-CoreCodeSchool/main/data/Images/Unemployment.png
+- **[Desemploeo Barcelona](https://raw.githubusercontent.com/VictorBlay/UnemploymentBCN-CoreCodeSchool/main/data/Images/Unemployment.png)**
 
 
 ## Autor
